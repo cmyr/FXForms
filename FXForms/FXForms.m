@@ -1954,6 +1954,7 @@ static BOOL *FXFormSetValueForKey(id<FXForm> form, id value, NSString *key)
 
     self.field.value = value;
     if (self.field.action) self.field.action(self);
+    if (self.field.valueTransformer) [self update];
 }
 
 - (BOOL)textFieldShouldBeginEditing:(__unused UITextField *)textField
